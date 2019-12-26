@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    main {
+        width: 500px;
+        height: 300px;
+        text-align: center;
+        margin: auto;
+    }
+    li {
+        list-style: none;
+    }
+    .tabsbox {
+        height: 300px;
+        border: 1px solid #c26e6e;
+    }
+    .firstnav {
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 1px solid #c26e6e;
+    }
+    .firstnav ul li{
+        float: left;
+    }
+    .tabadd {
+        float: right;
+    }
+
+    </style>
+</head>
+<body>
+    <main>
+    <h4>
+        JS面向对象  动态添加标签
+    </h4>
+    <div class="tabsbox" id="tab">
+    <!-- tab标签 -->
+    <nav class="firstnav">
+        <ul>
+            <li class="liactive"><span>测试1</span><span class="iconfont icon-guanbi"></span></li>
+            <li><span>测试2</span><span class="iconfont icon-guanbi"></span></li>
+            <li><span>测试3</span><span class="iconfont icon-guanbi"></span></li>
+        </ul>
+        <div class="tabadd">
+            <span>+</span>
+        </div>
+    </nav>
+    <!-- tab内容 -->
+    <section class="conactive">测试1</section>
+    <section>测试2</section>
+    <section>测试3</section>
+    </div>
+    </main>
+    <script src="js/tab.js"></script>
+</body>
+</html>

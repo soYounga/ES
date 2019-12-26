@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       function a() {
+        alert(1)
+        };
+    (function f(b) {
+        a();
+        a = function () {
+            alert(2)
+        };
+        function a() {
+            alert(3)
+        };
+        a();
+        var a;
+        a && a();
+        b();
+    })(a)
+
+// 变量提升后
+    function a() {
+        alert(1);
+    };
+    (function f(b) {
+        var a;
+        function a() {
+            alert(3)
+        }
+        a();//3
+        a = function() {
+            alert(2)
+        }
+        a();//2
+        a && a();//2
+        b();
+    })(a)//1
+    // 括号里面的a就相当于是一个函数但没有立即调用，
+    // 传给b，然后b（）调用，其实调用的是上面的弹出1的那个函数
+   </script> 
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 思考1
+    var name = "The Window";
+    var object = {
+        name: "my Object",
+        getNameFunc: function() {
+            return function() {
+                return this.name;
+            };
+        }
+    };
+    console.log(object.getNameFunc()());
+    // var f = object.getNameFunc()
+    // 类似于
+    // var f = function() {
+    //     return this.name;
+    // }
+    // f()
+    // function() {this} ()类似立即执行函数this指向window
+    // 思考2
+
+    var name = "The Window";
+    var object = {
+        name: "my Object",
+        getNameFunc: function() {
+            var that = this; //在getNameFunc里面this指向的是调用者在打印输出可以知道调用者是object
+            return function() {
+                return that.name;
+            };
+        }
+    };
+    console.log(object.getNameFunc()());
+     // var f = object.getNameFunc()
+    // 类似于
+    // var f = function() {
+    //     return that.name;
+    // }
+    // f()
+    </script>
+</body>
+</html>
